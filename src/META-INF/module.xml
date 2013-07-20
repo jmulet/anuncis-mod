@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<root>
+   <module autoStart="yes" class="org.iesapp.modules.anuncis.AnuncisModule" closable="no" enabled="yes" jar="org-iesapp-modules-anuncis.jar" multipleInstances="no" roles="*" shortcut="">
+	<initialization>
+                 <parameter key="onStartLoad" type="String">
+                     <value><![CDATA[5]]></value>
+                     <description><![CDATA[How many anuncis should display when program starts 5,10,15,20,*=ALL]]></description>
+                 </parameter>
+                 <parameter key="allowModifyStartup" type="Integer">   
+		     <value><![CDATA[0]]></value>
+                     <description><![CDATA[Allow users to modify anuncis startup policy (Start Menu-Windows)]]></description>
+                 </parameter>
+                 <parameter key="collapsaAnuncisPassats" type="Integer">   
+                 <value><![CDATA[1]]></value>
+                     <description><![CDATA[Política per amagar anuncis passats 0=mostra i expandit, 1=mostra collapsat, 2=amaga]]></description>
+                 </parameter>
+                 <parameter key="validationPolicy" type="String"> 
+                     <value><![CDATA[ASKONCE]]></value>
+                     <description><![CDATA[ALLWAYSASK; ASKONCE; NEVERASK passwords policy]]></description>
+                 </parameter>
+               	 <parameter key="restrictedEditingUsers" type="String"> 
+                     <value><![CDATA[CT1;AN3;AN4;PL1;]]></value>
+                     <description><![CDATA[iesDigital abrev usernames that can edit anuncis they own]]></description>
+                 </parameter>
+               	 <parameter key="fullEditingUsers" type="String"> 
+                     <value><![CDATA[MU1;MA5;TEC2;]]></value>
+                     <description><![CDATA[iesDigital abrev usernames that can edit ALL anuncis]]></description>
+                 </parameter>
+               	 <parameter key="template00" type="String"> 
+                     <value><![CDATA[reports/templates/extraescolars.html]]></value>
+                     <description><![CDATA[path of html templates relative to iesDigital/  use template01, etc. ]]></description>
+                 </parameter>
+               	 <parameter key="glist_COORDINACIO-TIC" type="String"> 
+                     <value><![CDATA[MA5;MU1;]]></value>
+                     <description><![CDATA[GroupsList for sending anuncis. Start with glist_ID]]></description>
+                 </parameter>
+               
+        </initialization>  
+
+        <display location="topwindow" parentId="right"/>
+        <anchor location="menu" parentId="jMenuModules"/>
+        <anchor location="toolbar" parentId=""/>
+        <bundle>
+            <locale key="title" value="ca"><![CDATA[Anuncis]]></locale>
+            <locale key="title" value="default"><![CDATA[Posts]]></locale>
+            <locale key="title" value="es"><![CDATA[Anuncios]]></locale>
+            <locale key="description" value="default"><![CDATA[Module designed to post information]]></locale>
+	</bundle>
+	<metaINF author="Josep Mulet Pol (c) 2012" dependencies="" version="1.2"/>
+</module>
+
+</root>
