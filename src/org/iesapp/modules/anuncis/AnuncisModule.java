@@ -23,6 +23,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.ButtonGroup;
 import javax.swing.DefaultComboBoxModel;
+import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
@@ -34,7 +35,7 @@ import org.iesapp.framework.pluggable.TopModuleWindow;
 import org.iesapp.framework.pluggable.grantsystem.GrantBean;
 import org.iesapp.framework.pluggable.preferences.UserPreferencesBean;
 import org.iesapp.framework.util.CoreCfg;
-import org.iesapp.util.StringUtils;
+import org.iesapp.framework.util.IconUtils;
 
 
     
@@ -696,11 +697,11 @@ public class AnuncisModule extends TopModuleWindow{
          /**-
      * @return the icon
      */
-    public static ImageIcon getIcon(String iconType, String iconName) {  
+    public static Icon getIcon(String iconType, String iconName) {  
        
-        ImageIcon icon = null;
+        Icon icon = null;
         if(iconType.equals(AnunciBean.RESOURCE_ICON)) {
-            icon = new ImageIcon(AnunciBean.class.getResource("/org/iesapp/modules/anuncis/icons/"+iconName));
+            icon = IconUtils.getIconResource(AnuncisModule.class.getClassLoader(), "org/iesapp/modules/anuncis/icons/"+iconName);
         }
         else if(iconType.equals(AnunciBean.IMPORTED_ICON))
         {

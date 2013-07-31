@@ -22,6 +22,7 @@ import java.net.URISyntaxException;
 import java.net.URL;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFileChooser;
@@ -389,7 +390,8 @@ public class DetailedAnunci extends javax.swing.JDialog {
         jTextPane1.setText(bean.getBody());
         jTextPane1.setCaretPosition(0);
         this.setTitle(titulo);
-        this.setIconImage(AnuncisModule.getIcon(bean.getIconType(), bean.getIconName()).getImage());
+        ImageIcon icon = (ImageIcon) AnuncisModule.getIcon(bean.getIconType(), bean.getIconName());
+        this.setIconImage(icon.getImage());
         jLabel3.setText(bean.getAuthor());
         jLabel4.setText(new DataCtrl(bean.getPostdate()).getDiaMesComplet());
          
